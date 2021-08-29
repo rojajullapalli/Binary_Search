@@ -21,4 +21,23 @@ public class BinarySearchTree<K extends  Comparable<K>> {
         return current;
     }
 
+    public int getSize(){
+        //return  this.getSizeRecursive(root);
+        int size = getSizeRecursive(root);
+        if(size == 0)
+            System.out.println("tree is empty");
+        else
+            System.out.println("Elements in tree = " + size);
+        return size;
+    }
+
+    public int getSizeRecursive(MyBinaryNode<K> current) {
+        int sizeValue;
+        if(current == null)
+            sizeValue=0;
+        else
+            sizeValue= 1+this.getSizeRecursive(current.left)+this.getSizeRecursive(current.right);
+        return sizeValue;
+    }
+
 }
