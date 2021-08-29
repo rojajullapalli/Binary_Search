@@ -40,4 +40,23 @@ public class BinarySearchTree<K extends  Comparable<K>> {
         return sizeValue;
     }
 
+
+    public boolean findNode(K key) {
+        return search(root, key);
+    }
+
+    private boolean search(MyBinaryNode<K> current,K key){
+        int comparisionResult = key.compareTo(current.key);
+        if(current == null)
+            return false;
+        if(comparisionResult == 0)
+            return true;
+        if (comparisionResult < 0)
+            search(current.left,key);
+        else
+            search(current.right,key);
+        return true;
+
+    }
+
 }

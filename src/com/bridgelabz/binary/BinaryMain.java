@@ -18,5 +18,6 @@ public class BinaryMain {
         myBinaryTree.add(63);
         myBinaryTree.add(67);
         myBinaryTree.getSize();
+        System.out.println("the value is "+myBinaryTree.findNode(63));
     }
 }
